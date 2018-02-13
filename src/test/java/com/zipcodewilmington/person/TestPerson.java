@@ -68,6 +68,27 @@ public class TestPerson {
         Assert.assertEquals(expectedName, actualName);
     }
 
+    //FIRST, new constructor test
+    @Test
+    public void testConstructorWithNameMiddlenameLastname() {
+        // Given
+        String expectedName = "Leon";
+        String expectedMiddlename = "middlename";
+        String expectedLastname = "lastname";
+
+        // When
+        Person person = new Person(expectedName, expectedMiddlename, expectedLastname);
+
+        // Then
+        String actualName = person.getName();
+        String actualMiddlename = person.getMiddlename();
+        String actualLastname = person.getLastname();
+
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedMiddlename, actualMiddlename);
+        Assert.assertEquals(expectedLastname, actualLastname);
+    }
+
     @Test
     public void testSetName() {
         // Given
@@ -95,4 +116,50 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+    //FOURTH
+    @Test
+    public void testSetPhoneNumber() {
+        // Given
+        Person person = new Person();
+        String expected = "(111) 222-3333";
+
+        // When
+        person.setPhoneNumber(expected);
+
+        // Then
+        String actual = person.getPhoneNumber();
+        Assert.assertEquals(expected, actual);
+    }
+
+    //SIXTH
+    @Test
+    public void testSetCity() {
+        // Given
+        Person person = new Person();
+        String expected = "mycity";
+
+        // When
+        person.setCity(expected);
+
+        // Then
+        String actual = person.getCity();
+        Assert.assertEquals(expected, actual);
+    }
+
+    //EIGHTH
+    @Test
+    public void testSetZipcode() {
+        // Given
+        Person person = new Person();
+        Integer expected = 12345;
+
+        // When
+        person.setZipcode(expected);
+
+        // Then
+        Integer actual = person.getZipcode();
+        Assert.assertEquals(expected, actual);
+    }
+
 }
